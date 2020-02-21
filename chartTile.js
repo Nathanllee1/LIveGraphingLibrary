@@ -25,9 +25,9 @@ class ChartTile {
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
 
-        this.chartTile.style.width = this.canvasWidth;
-        this.chartTile.style.height = this.canvasHeight;
-        console.log(canvasHeight)
+        this.chartTile.width = this.canvasWidth;
+        this.chartTile.height = this.canvasHeight;
+        console.log(this.chartTile.width)
 
     }
 
@@ -44,13 +44,14 @@ class ChartTile {
 
         for(var b = 0; b < this.data.length; b++) {
             this.newX = (this.data[b][0] - this.xAxis[0]) * this.XScale
-            this.newY = (this.data[b][1] - this.yAxis[0]) * this.YScale
+            this.newY = this.canvasHeight - (this.data[b][1] - this.yAxis[0]) * this.YScale
             //console.log(1 / this.YScale)
             console.log()
             console.log(this.newX, this.newY)
             this.ctx.lineTo(this.newX, this.newY)
         }
         this.ctx.stroke();
+
     }
 }
 

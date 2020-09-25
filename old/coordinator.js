@@ -51,9 +51,6 @@ class GraphComponent {
     this.fullTile.loadData(this.loadRange, this.sensors);
     this.fullTile.plotData();
   }
-
-
-
 }
 
 var testGraph = new GraphComponent(['test'], [-20, 40], [20, 55])
